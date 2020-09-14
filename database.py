@@ -9,7 +9,6 @@ class DataBase:
 
     def __init__(self, db_path):
         self.engine = create_engine(f'sqlite:///{db_path}')
-        # self.engine = create_engine(f'sqlite:///{db_path}?check_same_thread=False')
         self.create_base()
         self.session = self.get_session()
 
