@@ -8,7 +8,7 @@ db_path = 'database.sqlite3'
 class DataBase:
 
     def __init__(self, db_path):
-        self.engine = create_engine(f'sqlite:///{db_path}')
+        self.engine = create_engine(f'sqlite:///{db_path}', echo=True)
         self.create_base()
         self.session = self.get_session()
 
