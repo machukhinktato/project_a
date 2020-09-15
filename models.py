@@ -1,5 +1,6 @@
-from sqlalchemy import Column, Integer, ForeignKey, String
+from sqlalchemy import Column, Integer, ForeignKey, String, Table
 from sqlalchemy.ext.declarative import declarative_base
+from database import *
 
 Base = declarative_base()
 
@@ -33,7 +34,7 @@ class Units(Base):
 class Positions(Base):
     __tablename__ = 'positions'
     position_id = Column(Integer, primary_key=True)
-    position = Column(String(30), nullable=False)
+    position = Column(String, nullable=False)
 
     def __init__(self, position):
         self.position = position
@@ -88,3 +89,12 @@ class Vendors(Base):
 
     def __repr__(self):
         return self.vendor_name
+
+
+if __name__ == '__main__':
+    database = database(db_path)
+    session = sessionmaker(bind=database.engine)
+    pos = Positions('director')
+    session
+    session.add(pos)
+    session.commit

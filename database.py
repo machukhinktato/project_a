@@ -1,6 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
+from models import *
 
 db_path = 'database.sqlite3'
 
@@ -24,3 +25,7 @@ class DataBase:
 
 if __name__ == '__main__':
     database = DataBase(db_path)
+    # pos = Positions('vasya')
+    # database.session.add([Positions('vasya')])
+    # database.session.commit()
+    print(database.session.dirty)
