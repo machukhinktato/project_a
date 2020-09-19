@@ -47,7 +47,7 @@ if __name__ == "__main__":
 
     CMW = CatalogMainWindow()
     CMW.setWindowTitle('Складской учет')
-    CMW.setFixedSize(1200, 800)
+    CMW.setFixedSize(700, 300)
     CMW.show()
 
     '''
