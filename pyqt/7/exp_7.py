@@ -44,3 +44,6 @@ else:
     print(conn.lastError().text())
 
 conn.close()
+
+
+bin()
