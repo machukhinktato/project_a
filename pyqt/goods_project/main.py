@@ -83,30 +83,19 @@ class AppWindow(QMainWindow):
             self.table_model.removeRows(i, 1)
 
     def open_db_file_action(self):
-        self.db_path = QFileDialog.getOpenFileName(self, "Open file")[0]
+        self.db_path = QFileDialog.getOpenFileName(self, "open file")[0]
         self.ui.path_db.setText(self.db_path)
         self.db.close()
         self.open_db()
 
     def save_change_db(self):
         if self.table_model.submitAll():
-            self.ui.statusbar.showMessage('Изменения сохранены')
+            self.ui.statusbar.showMessage('changes saved')
         else:
             self.ui.statusbar.showMessage(f'{self.table_model.lastError().text()}')
 
 
 if __name__ == '__main__':
-    # app = QApplication(sys.argv)
-    # db = QSqlDatabase.addDatabase('QSQLITE')
-    # db.setDatabaseName(r'C:\Users\pilik\PycharmProjects\python\dz6\database\database.sqlite3')
-    # db.open()
-
-    # view = QTableView(self)
-    # model = QSqlQueryModel(self)
-    # model.setQuery('SELECT * FROM goods')
-    # view.setModel(model)
-    # view.move(10, 10)
-    # view.resize(617, 315)
     app = QApplication(sys.argv)
 
     wnd = AppWindow()
