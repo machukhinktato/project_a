@@ -7,7 +7,7 @@ from PyQt5.QtSql import QSqlDatabase, QSqlQueryModel, QSqlTableModel, QSqlQuery,
 from main_window import Ui_MainWindow
 
 
-class MyWindow(QMainWindow):
+class AppWindow(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
         self.ui = Ui_MainWindow()
@@ -16,10 +16,10 @@ class MyWindow(QMainWindow):
         self.db_path = r'database\database.sqlite3'
         self.ui.path_db.setText(self.db_path)
 
-        self.save_db = QAction(QIcon('icon/save.png'), 'Save', self)
-        self.open_db_file = QAction(QIcon('icon/open-db.png'), 'Open', self)
-        self.add_row = QAction(QIcon('icon/add.png'), 'Add row', self)
-        self.del_row = QAction(QIcon('icon/del.png'), ' Del row', self)
+        self.open_db_file = QAction(QIcon('img/open-db.png'), 'load data', self)
+        self.save_db = QAction(QIcon('img/save.png'), 'save', self)
+        self.add_row = QAction(QIcon('img/add.png'), 'add', self)
+        self.del_row = QAction(QIcon('img/del.png'), 'del', self)
         self.ui.toolBar.addAction(self.save_db)
         self.ui.toolBar.addAction(self.open_db_file)
         self.ui.toolBar.addAction(self.add_row)
@@ -109,7 +109,7 @@ if __name__ == '__main__':
     # view.resize(617, 315)
     app = QApplication(sys.argv)
 
-    wnd = MyWindow()
+    wnd = AppWindow()
     wnd.show()
 
     sys.exit(app.exec())
