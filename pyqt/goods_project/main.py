@@ -16,7 +16,7 @@ class AppWindow(QMainWindow):
         self.db_path = r'database\database.sqlite3'
         self.ui.path_db.setText(self.db_path)
 
-        self.open_db_file = QAction(QIcon('img/open-db.png'), 'load data', self)
+        self.open_db_file = QAction(QIcon('img/open.png'), 'load data', self)
         self.save_db = QAction(QIcon('img/save.png'), 'save', self)
         self.add_row = QAction(QIcon('img/add.png'), 'add', self)
         self.del_row = QAction(QIcon('img/del.png'), 'del', self)
